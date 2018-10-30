@@ -1,0 +1,95 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Firefox DevTools Focus Ring Styles</title>
+  <link rel="stylesheet" href="variables.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Firefox DevTools Focus Ring Styles</h1>
+  <p class="warning-box">The examples in this page rely on a JS <a href="https://github.com/WICG/focus-visible">:focus-visible polyfill</a> to show focus rings on keyboard interactions only; see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1445482">bug 1445482</a>.</p>
+
+  <h2>Tall toolbar (28px)</h2>
+  <div class="example-box theme-light">
+    <div class="toolbar toolbar--big">
+      <div class="toolbar-group">
+        <button class="toolbar-button">Text Button</button>
+        <button class="toolbar-button" aria-label="New thing" title="New thing">
+          <svg><use xlink:href="icons.svg#new"></use></svg>
+        </button>
+        <button class="toolbar-button" aria-label="Paste" title="Paste">
+          <svg><use xlink:href="icons.svg#paste"></use></svg>
+        </button>
+      </div>
+      <div class="toolbar-group">
+        <input type="text" class="toolbar-input" placeholder="Text input" aria-label="Text input">
+        <span class="toolbar-splitter toolbar-splitter--spaced"></span>
+        <input type="text" class="toolbar-input-full" placeholder="Another input" aria-label="Another input">
+      </div>
+    </div>
+  </div>
+  <div class="example-box theme-dark">
+    <div class="toolbar toolbar--big">
+      <div class="toolbar-group">
+        <button class="toolbar-button">Text Button</button>
+        <button class="toolbar-button" aria-label="New thing" title="New thing">
+          <svg><use xlink:href="icons.svg#new"></use></svg>
+        </button>
+        <button class="toolbar-button" aria-label="Paste" title="Paste">
+          <svg><use xlink:href="icons.svg#paste"></use></svg>
+        </button>
+      </div>
+      <div class="toolbar-group">
+        <input type="text" class="toolbar-input" placeholder="Text input" aria-label="Text input">
+        <span class="toolbar-splitter toolbar-splitter--spaced"></span>
+        <input type="text" class="toolbar-input-full" placeholder="Another input" aria-label="Another input">
+      </div>
+    </div>
+  </div>
+
+  <h2>Short toolbar (24px)</h2>
+  <div class="example-box theme-light">
+    <div class="toolbar">
+      <div class="toolbar-group">
+        <button class="toolbar-button">Text Button</button>
+        <button class="toolbar-button" aria-label="New thing" title="New thing">
+          <svg><use xlink:href="icons.svg#new"></use></svg>
+        </button>
+        <button class="toolbar-button" aria-label="Paste" title="Paste">
+          <svg><use xlink:href="icons.svg#paste"></use></svg>
+        </button>
+      </div>
+      <div class="toolbar-group">
+        <input type="text" class="toolbar-input" placeholder="Text input" aria-label="Text input">
+        <span class="toolbar-splitter toolbar-splitter--spaced"></span>
+        <input type="text" class="toolbar-input-full" placeholder="Another input" aria-label="Another input">
+      </div>
+    </div>
+  </div>
+  <div class="example-box theme-dark">
+    <div class="toolbar">
+      <div class="toolbar-group">
+        <button class="toolbar-button">Text Button</button>
+        <button class="toolbar-button" aria-label="New thing" title="New thing">
+          <svg><use xlink:href="icons.svg#new"></use></svg>
+        </button>
+        <button class="toolbar-button" aria-label="Paste" title="Paste">
+          <svg><use xlink:href="icons.svg#paste"></use></svg>
+        </button>
+      </div>
+      <div class="toolbar-group">
+        <input type="text" class="toolbar-input" placeholder="Text input" aria-label="Text input">
+        <span class="toolbar-splitter toolbar-splitter--spaced"></span>
+        <input type="text" class="toolbar-input-full" placeholder="Another input" aria-label="Another input">
+      </div>
+    </div>
+  </div>
+
+<script src="https://unpkg.com/focus-visible@4.1.5/dist/focus-visible.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="copy" viewBox="0 0 16 16">
+    <path d="M14.707 8.293l-3-3A1 1 0 0 0 11 5h-1V4a1 1 0 0 0-.293-.707l-3-3A1 1 0 0 0 6 0H3a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h3v3a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2V9a1 1 0 0 0-.293-.707zM12.586 9H11V7.414zm-5-5H6V2.414zM6 7v2H3V2h2v2.5a.5.5 0 0 0 .5.5H8a2 2 0 0 0-2 2zm2 7V7h2v2.5a.5.5 0 0 0 .5.5H13v4z"></path>
+  </symbol>
+  <symbol id="paste" viewBox="0 0 16 16">
+    <path d="M11 2H9.95a2.5 2.5 0 0 0-4.9 0H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm0 7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5h7zm0-5H4V3h1.05a1 1 0 0 0 .98-.8 1.5 1.5 0 0 1 2.939 0 1 1 0 0 0 .98.8H11zM7.5 2a.5.5 0 1 0 .5.5.5.5 0 0 0-.5-.5zm-2 5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0 0 1zm0 2h2a.5.5 0 0 0 0-1h-2a.5.5 0 0 0 0 1z"></path>
+  </symbol>
+  <symbol id="new" viewBox="0 0 16 16">
+    <path d="M14 7H9V2a1 1 0 0 0-2 0v5H2a1 1 0 0 0 0 2h5v5a1 1 0 0 0 2 0V9h5a1 1 0 0 0 0-2z"></path>
+  </symbol>
+</svg>

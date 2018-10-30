@@ -1,0 +1,149 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/**
+ * Reset button styles.
+ * It takes a bit of work to achieve a neutral look.
+ */
+ button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: default;
+}
+
+svg {
+  fill: currentColor;
+}
+
+::-moz-focus-inner {
+  border: none;
+}
+
+.warning-box {
+  border: solid 1px #d7b600;
+  padding: 20px;
+  background-color: #fff8b0;
+}
+
+.example-box {
+  margin: 20px 0;
+  border: solid 1px var(--theme-splitter-color);
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+  font-size: 11px;
+  line-height: 1.2727;
+  background-color: var(--theme-body-background);
+}
+
+.horizontal-splitter {
+  display: block;
+  border-bottom: solid 1px var(--theme-splitter-color);
+}
+
+.toolbar {
+  display: flex;
+  min-height: var(--toolbar-height);
+  color: var(--theme-toolbar-color);
+  background-color: var(--theme-toolbar-background);
+  overflow: hidden;
+}
+
+.toolbar--big {
+  --toolbar-height: 28px;
+}
+
+.toolbar-splitter {
+  display: block;
+  align-self: stretch;
+  margin: 4px 0;
+  border-right: solid 1px var(--theme-splitter-color);
+}
+
+.toolbar-splitter--spaced {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.toolbar-group {
+  display: flex;
+  padding: 0 3px;
+}
+
+.toolbar-group--end {
+  margin-left: auto;
+}
+
+.toolbar-button {
+  align-self: center;
+  outline: none;
+  margin: 1px;
+  padding: 3px 4px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+}
+
+.toolbar-button svg {
+  vertical-align: top;
+  margin: -1px 0;
+  width: 16px;
+  height: 16px;
+}
+
+.toolbar-button:hover {
+  background-color: var(--theme-toolbar-hover);
+}
+
+.toolbar-button.focus-visible {
+  border-color: var(--theme-focus-outline-primary-color);
+  box-shadow: 0 0 0 2px var(--theme-focus-outline-secondary-color);
+}
+
+.toolbar-button--altfocus:-moz-focusring {
+  box-shadow: inset 0 0 0 2px var(--theme-focus-outline-secondary-color);
+}
+
+.toolbar-input {
+  align-self: center;
+  border: solid 1px var(--theme-splitter-color);
+  border-radius: 2px;
+  padding: 3px 3px;
+  font: inherit;
+  color: var(--input-color);
+  background-color: var(--input-background);
+}
+
+.toolbar-input-full {
+  align-self: stretch;
+  margin: 0 1px;
+  border: solid 1px transparent;
+  padding: 4px 5px;
+  font: inherit;
+  color: var(--input-color);
+  background-color: transparent;
+}
+
+.toolbar-input:focus {
+  border-color: var(--theme-focus-outline-primary-color);
+  box-shadow: 0 0 0 2px var(--theme-focus-outline-secondary-color);
+}
+
+.toolbar-input-full:focus {
+  border-color: var(--theme-focus-outline-primary-color);
+  box-shadow: inset 0 0 0 2px var(--theme-focus-outline-secondary-color);
+}
