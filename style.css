@@ -44,11 +44,9 @@ svg {
 
 .example-box {
   margin: 20px 0;
-  border: solid 1px var(--theme-splitter-color);
   box-shadow: 0 1px 4px rgba(0,0,0,.15);
   font-size: 11px;
   line-height: 1.2727;
-  background-color: var(--theme-body-background);
 }
 
 .horizontal-splitter {
@@ -58,10 +56,11 @@ svg {
 
 .toolbar {
   display: flex;
-  min-height: var(--toolbar-height);
+  height: var(--toolbar-height);
   color: var(--theme-toolbar-color);
   background-color: var(--theme-toolbar-background);
   overflow: hidden;
+  border: solid 1px var(--theme-splitter-color);
 }
 
 .toolbar--big {
@@ -118,6 +117,16 @@ svg {
   box-shadow: inset 0 0 0 2px var(--theme-focus-outline-secondary-color);
 }
 
+.toolbox .toolbar-button.focus-visible {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px inset var(--theme-focus-outline-secondary-color);
+}
+
+.toolbox  .toolbar-button--altfocus:-moz-focusring {
+  box-shadow: 0 0 0 2px inset var(--theme-focus-outline-secondary-color);
+}
+
+
 .toolbar-input {
   align-self: center;
   border: solid 1px var(--theme-splitter-color);
@@ -146,4 +155,41 @@ svg {
 .toolbar-input-full:focus {
   border-color: var(--theme-focus-outline-primary-color);
   box-shadow: inset 0 0 0 2px var(--theme-focus-outline-secondary-color);
+}
+
+
+.toolbox {
+  --toolbar-height: 28px;
+  margin-left:  calc(-50vw + 380px); /* escaping of body */
+  margin-right: calc(-50vw + 380px);
+  width: 100vw;
+  border:0;
+}
+@media screen and (max-width:800px) {
+  .toolbox{
+    margin-left:-20px;
+  }
+}
+.toolbox .toolbar-group{
+  flex-grow: 1;
+  padding: 0;
+}
+.toolbox .toolbar-group--end {
+  flex-grow: 0;
+  margin-left: auto;
+}
+.toolbox .toolbar-button {
+  padding: 7px 4px;
+  margin:0;
+}
+
+.active {
+  color: var(--theme-toolbar-selected-color);
+}
+.active::before {
+  content: "";
+  outline: 2px solid var(--theme-toolbar-selected-color);
+  display: block;
+  width: calc(100% + 4px);
+  margin:-7px 0 7px -2px;
 }
