@@ -65,6 +65,7 @@
   --theme-focus-outline-primary-color: var(--blue-50);
   --theme-focus-outline-secondary-color: var(--blue-50-a30);
   --theme-toolbar-selected-color: var(--theme-focus-outline-primary-color);
+  --theme-toolbar-border-top-color: var(--grey-40);
 
   --input-color: var(--grey-90);
   --input-background: var(--grey-10);
@@ -78,6 +79,7 @@
   --theme-focus-outline-primary-color: var(--blue-50);
   --theme-focus-outline-secondary-color: var(--blue-40);
   --theme-toolbar-selected-color: var(--theme-focus-outline-primary-color);
+  --theme-toolbar-border-top-color: var(--grey-40);
 
   --input-color: var(--grey-10);
   --input-background: var(--grey-90);
