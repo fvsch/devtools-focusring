@@ -47,6 +47,7 @@ svg {
   box-shadow: 0 1px 4px rgba(0,0,0,.15);
   font-size: 11px;
   line-height: 1.2727;
+  border: solid 1px var(--theme-splitter-color);
 }
 
 .horizontal-splitter {
@@ -60,7 +61,6 @@ svg {
   color: var(--theme-toolbar-color);
   background-color: var(--theme-toolbar-background);
   overflow: hidden;
-  border: solid 1px var(--theme-splitter-color);
 }
 
 .toolbar--big {
@@ -181,6 +181,7 @@ svg {
 .toolbox .toolbar-button {
   padding: 7px 4px;
   margin:0;
+  border:0;
 }
 
 .active {
