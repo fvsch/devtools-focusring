@@ -75,8 +75,8 @@
   --theme-toolbar-background: var(--grey-85);
   --theme-toolbar-color: var(--grey-40);
   --theme-toolbar-hover: var(--grey-70);
-  --theme-focus-outline-primary-color: var(--teal-60);
-  --theme-focus-outline-secondary-color: var(--teal-70);
+  --theme-focus-outline-primary-color: var(--blue-50);
+  --theme-focus-outline-secondary-color: var(--blue-40);
   --theme-toolbar-selected-color: var(--theme-focus-outline-primary-color);
 
   --input-color: var(--grey-10);

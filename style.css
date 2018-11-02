@@ -160,15 +160,7 @@ svg {
 
 .toolbox {
   --toolbar-height: 28px;
-  margin-left:  calc(-50vw + 380px); /* escaping of body */
-  margin-right: calc(-50vw + 380px);
-  width: 100vw;
   border:0;
-}
-@media screen and (max-width:800px) {
-  .toolbox{
-    margin-left:-20px;
-  }
 }
 .toolbox .toolbar-group{
   flex-grow: 1;
@@ -187,7 +179,7 @@ svg {
 .active {
   color: var(--theme-toolbar-selected-color);
 }
-.active::before {
+:not(.command-button).active::before {
   content: "";
   outline: 2px solid var(--theme-toolbar-selected-color);
   display: block;
