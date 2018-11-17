@@ -44,11 +44,10 @@ svg {
 
 .example-box {
   margin: 20px 0;
-  border: solid 1px var(--theme-splitter-color);
   box-shadow: 0 1px 4px rgba(0,0,0,.15);
   font-size: 11px;
   line-height: 1.2727;
-  background-color: var(--theme-body-background);
+  border: solid 1px var(--theme-splitter-color);
 }
 
 .horizontal-splitter {
@@ -58,7 +57,7 @@ svg {
 
 .toolbar {
   display: flex;
-  min-height: var(--toolbar-height);
+  height: var(--toolbar-height);
   color: var(--theme-toolbar-color);
   background-color: var(--theme-toolbar-background);
   overflow: hidden;
@@ -118,6 +117,16 @@ svg {
   box-shadow: inset 0 0 0 2px var(--theme-focus-outline-secondary-color);
 }
 
+.toolbox .toolbar-button.focus-visible {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px inset var(--theme-focus-outline-secondary-color);
+}
+
+.toolbox  .toolbar-button--altfocus:-moz-focusring {
+  box-shadow: 0 0 0 2px inset var(--theme-focus-outline-secondary-color);
+}
+
+
 .toolbar-input {
   align-self: center;
   border: solid 1px var(--theme-splitter-color);
@@ -146,4 +155,41 @@ svg {
 .toolbar-input-full:focus {
   border-color: var(--theme-focus-outline-primary-color);
   box-shadow: inset 0 0 0 2px var(--theme-focus-outline-secondary-color);
+}
+
+.toolbox {
+  --toolbar-height: 28px;
+  border:0;
+}
+
+.toolbox .toolbar-group{
+  padding: 0;
+}
+
+.toolbox .toolbar-button {
+  padding: 7px 4px;
+  margin: 0;
+  border: 0;
+}
+
+.active {
+  color: var(--theme-toolbar-selected-color);
+}
+
+.toolbox .toolbar-button:not(.command-button)::before {
+  content: "";
+  outline: 1px solid transparent;
+  display: block;
+  width: calc(100% + 6px);
+  position:relative;
+  top:-6px;
+  left:-3px;
+}
+
+.toolbox .toolbar-button:not(.command-button).active::before {
+  outline-color: var(--theme-toolbar-selected-color);
+}
+
+.toolbox .toolbar-button:not(.command-button):hover::before {
+  outline-color: var(--theme-toolbar-border-top-color);
 }
