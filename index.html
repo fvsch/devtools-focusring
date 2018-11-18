@@ -10,164 +10,135 @@
   <link rel="stylesheet" href="variables.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="theme-light">
+
+<header>
 <h1>Firefox DevTools Focus Ring Styles</h1>
-<p class="warning-box">The examples in this page rely on a JS <a href="https://github.com/WICG/focus-visible">:focus-visible
-  polyfill</a> to show focus rings on keyboard interactions only; see <a
-        href="https://bugzilla.mozilla.org/show_bug.cgi?id=1445482">bug 1445482</a>.</p>
+</header>
 
+<h2>Goals</h2>
+<ul>
+  <li>Harmonize focus styles across DevTools.</li>
+  <li>Be consistent with Photon (see <a href="https://design.firefox.com/photon/components/buttons.html#default-4">Photon button style</a>), but adapt to the constraints of the DevTools UI (which is roughly 30% smaller, with 22px-tall buttons instead of 32px-tall ones).</li>
+  <li>Make focus styles more proeminent for keyboard users.</li>
+  <li>Do not create confusion for mouse users.</li>
+</ul>
 
-<h2>Top nav (28px)</h2>
-<div class="example-box toolbar toolbox theme-light">
-  <div class="toolbar-group toolbar-group--start">
-    <button class="toolbar-button active" title="DOM and Style Inspector (Ctrl+Shift+)C" type="button" >
-      <svg><use xlink:href="icons.svg#inspector"></use></svg>
-      Inspector
-    </button>
-    <button class="toolbar-button" title="Network Monitor (Ctrl+Shift+E)" type="button">
-      <svg><use xlink:href="icons.svg#network"></use></svg>
-      Network
-    </button>
+<h2>Interactive example</h2>
+<p>Recommended testing method: use the Tab and Shift+Tab keyboard shortcuts to tab through the different elements in the example. Use the theme switcher button to check the focus styles on both light and dark themes.</p>
+
+<p>
+  <button class="theme-switcher" onclick="switchTheme()">Switch theme</button>
+  <input type="checkbox" id="dark-alternative">
+<label for="dark-alternative">Alternative focus style for dark theme (2px border)</label>
+</p>
+
+<section class="example-box">
+  <div class="toolbar toolbar--big">
+    <div class="devtools-tabs">
+      <button class="devtools-tab active">
+        <svg><use href="icons.svg#inspector"></use></svg>
+        Inspector
+      </button>
+      <button class="devtools-tab">
+        <svg><use href="icons.svg#network"></use></svg>
+        Network
+      </button>
+    </div>
+    <div class="toolbar-group toolbar-group--end">
+      <button class="toolbar-fullbutton command-button active">
+        <svg><use href="icons.svg#rdm"></use></svg>
+      </button>
+      <button class="toolbar-fullbutton command-button">
+        <svg><use href="icons.svg#options"></use></svg>
+      </button>
+      <button class="toolbar-fullbutton command-button">
+        <svg><use href="icons.svg#close"></use></svg>
+      </button>
+    </div>
   </div>
-  <div class="toolbar-group toolbar-group--end">
-    <button class="toolbar-button command-button active" title="Responsive Design Mode (Ctrl+Shift+M)">
-      <svg><use xlink:href="icons.svg#rdm"></use></svg>
-    </button>
-    <button class="toolbar-button command-button"  title="Customize Developer Tools and Get Help">
-      <svg><use xlink:href="icons.svg#options"></use></svg>
-    </button>
-    <button class="toolbar-button command-button" title="Close Developer Tools">
-      <svg><use xlink:href="icons.svg#close"></use></svg>
-    </button>
-  </div>
-</div>
-
-
-<div class="example-box toolbar toolbox theme-dark">
-  <div class="toolbar-group toolbar-group--start">
-    <button class="toolbar-button active" title="DOM and Style Inspector (Ctrl+Shift+)C" type="button" >
-      <svg><use xlink:href="icons.svg#inspector"></use></svg>
-      Inspector
-    </button>
-    <button class="toolbar-button" title="Network Monitor (Ctrl+Shift+E)" type="button">
-      <svg><use xlink:href="icons.svg#network"></use></svg>
-      Network
-    </button>
-  </div>
-  <div class="toolbar-group toolbar-group--end">
-    <button class="toolbar-button command-button active" title="Responsive Design Mode (Ctrl+Shift+M)">
-      <svg><use xlink:href="icons.svg#rdm"></use></svg>
-    </button>
-    <button class="toolbar-button command-button" title="Customize Developer Tools and Get Help">
-      <svg><use xlink:href="icons.svg#options"></use></svg>
-    </button>
-    <button class="toolbar-button command-button" title="Close Developer Tools">
-      <svg><use xlink:href="icons.svg#close"></use></svg>
-    </button>
-  </div>
-</div>
-
-
-
-<h2>Tall toolbar (28px)</h2>
-<div class="example-box theme-light">
+  <div class="horizontal-splitter"></div>
   <div class="toolbar toolbar--big">
     <div class="toolbar-group">
-      <button class="toolbar-button">Text Button</button>
+      <span style="align-self:center;opacity:0.75;padding: 4px 6px">24px&nbsp;Toolbar:</span>
+    </div>
+    <div class="toolbar-group">
       <button class="toolbar-button" aria-label="New thing" title="New thing">
-        <svg>
-          <use xlink:href="icons.svg#new"></use>
-        </svg>
+        <svg><use href="icons.svg#new"></use></svg>
       </button>
       <button class="toolbar-button" aria-label="Paste" title="Paste">
-        <svg>
-          <use xlink:href="icons.svg#paste"></use>
-        </svg>
+        <svg><use href="icons.svg#paste"></use></svg>
       </button>
+      <button class="toolbar-button">Text Button</button>
     </div>
     <div class="toolbar-group">
       <input type="text" class="toolbar-input" placeholder="Text input" aria-label="Text input">
       <span class="toolbar-splitter toolbar-splitter--spaced"></span>
-      <input type="text" class="toolbar-input-full" placeholder="Another input" aria-label="Another input">
+      <input type="text" class="toolbar-fullinput" placeholder="Another input" aria-label="Another input">
     </div>
   </div>
-</div>
-<div class="example-box theme-dark">
-  <div class="toolbar toolbar--big">
-    <div class="toolbar-group">
-      <button class="toolbar-button">Text Button</button>
-      <button class="toolbar-button" aria-label="New thing" title="New thing">
-        <svg>
-          <use xlink:href="icons.svg#new"></use>
-        </svg>
-      </button>
-      <button class="toolbar-button" aria-label="Paste" title="Paste">
-        <svg>
-          <use xlink:href="icons.svg#paste"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="toolbar-group">
-      <input type="text" class="toolbar-input" placeholder="Text input" aria-label="Text input">
-      <span class="toolbar-splitter toolbar-splitter--spaced"></span>
-      <input type="text" class="toolbar-input-full" placeholder="Another input" aria-label="Another input">
-    </div>
-  </div>
-</div>
-
-<h2>Short toolbar (24px)</h2>
-<div class="example-box theme-light">
+  <div class="horizontal-splitter"></div>
   <div class="toolbar">
     <div class="toolbar-group">
-      <button class="toolbar-button">Text Button</button>
+      <span style="align-self:center;opacity:0.75;padding: 4px 6px">24px&nbsp;Toolbar:</span>
+    </div>
+    <div class="toolbar-group">
       <button class="toolbar-button" aria-label="New thing" title="New thing">
-        <svg>
-          <use xlink:href="icons.svg#new"></use>
-        </svg>
+        <svg><use href="icons.svg#new"></use></svg>
       </button>
       <button class="toolbar-button" aria-label="Paste" title="Paste">
-        <svg>
-          <use xlink:href="icons.svg#paste"></use>
-        </svg>
+        <svg><use href="icons.svg#paste"></use></svg>
       </button>
+      <button class="toolbar-button">Text Button</button>
     </div>
     <div class="toolbar-group">
       <input type="text" class="toolbar-input" placeholder="Text input" aria-label="Text input">
       <span class="toolbar-splitter toolbar-splitter--spaced"></span>
-      <input type="text" class="toolbar-input-full" placeholder="Another input" aria-label="Another input">
+      <input type="text" class="toolbar-fullinput" placeholder="Another input" aria-label="Another input">
     </div>
   </div>
-</div>
-<div class="example-box theme-dark">
-  <div class="toolbar">
-    <div class="toolbar-group">
-      <button class="toolbar-button">Text Button</button>
-      <button class="toolbar-button" aria-label="New thing" title="New thing">
-        <svg>
-          <use xlink:href="icons.svg#new"></use>
-        </svg>
-      </button>
-      <button class="toolbar-button" aria-label="Paste" title="Paste">
-        <svg>
-          <use xlink:href="icons.svg#paste"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="toolbar-group">
-      <input type="text" class="toolbar-input" placeholder="Text input" aria-label="Text input">
-      <span class="toolbar-splitter toolbar-splitter--spaced"></span>
-      <input type="text" class="toolbar-input-full" placeholder="Another input" aria-label="Another input">
-    </div>
-  </div>
-</div>
+</section>
 
+<h2>Note: avoiding focus styles after mouse interaction</h2>
 
+<p>
+  We want to avoid showing proeminent focus styles after mouse clicks on button elements. This can be a source of confusion for mouse-centric users, when using subtle focus styles (see e.g. <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1476296">bug 1476296</a>); in my experience it's a very common source of confusion when using more visible focus styles.
+</p>
 
+<p>
+  The ideal solution would be to use the <code>:focus-visible</code> CSS feature, which is supposed to only activate on certain elements (e.g. text inputs) and/or after keyboard navigation (precise heuristics are left to browser implementation).
+</p>
 
+<p>
+  Right now, <code>:focus-visible</code> is only implemented behind a flag in Chrome, and Firefox has the older <code>:moz-focusring</code> which sadly seems to work exactly like <code>:focus</code> these days (could be a recent regression). <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1445482">Gecko implementation bug for :focus-visible</a>.
+</p>
 
+<p>
+  <strong style="color:var(--red-50)">Implementing this design is blocked on Gecko implementing :focus-visible!</strong>
+</p>
 
+<p>
+  We've implemented this example using a JavaScript polyfill (<a href="https://github.com/WICG/focus-visible">WICG/focus-visible</a>).
+</p>
 
-
+<script>
+  document.querySelector('#dark-alternative').addEventListener('change', event => {
+    if (event.target.checked) {
+      document.body.classList.add('dark-alt');
+    } else {
+      document.body.classList.remove('dark-alt');
+    }
+  });
+  function switchTheme() {
+    if (document.body.classList.contains('theme-light')) {
+      document.body.classList.remove('theme-light');
+      document.body.classList.add('theme-dark');
+    } else {
+      document.body.classList.add('theme-light');
+      document.body.classList.remove('theme-dark');
+    }
+  }
+</script>
 <script src="https://unpkg.com/focus-visible@4.1.5/dist/focus-visible.js"></script>
 </body>
 </html>

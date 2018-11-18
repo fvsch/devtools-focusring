@@ -11,8 +11,9 @@
   <symbol id="new" viewBox="0 0 16 16">
     <path d="M14 7H9V2a1 1 0 0 0-2 0v5H2a1 1 0 0 0 0 2h5v5a1 1 0 0 0 2 0V9h5a1 1 0 0 0 0-2z"></path>
   </symbol>
-  <symbol id="inspector"  viewBox="0 0 16 16">
-    <path d="M8,3L12,3L12,7L14,7L14,8L12,8L12,12L8,12L8,14L7,14L7,12L3,12L3,8L1,8L1,7L3,7L3,3L7,3L7,1L8,1L8,3ZM10,10L10,5L5,5L5,10L10,10Z"/>
+  <symbol id="inspector" viewBox="0 0 16 16">
+    <path d="M3 4v8h10V4H3zM2 4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4z"/>
+    <path d="M8.5 3.5V2a.5.5 0 0 0-1 0v1.5a.5.5 0 0 0 1 0zM1 8.5h1a.5.5 0 0 0 0-1H1a.5.5 0 0 0 0 1zm13 0h1a.5.5 0 1 0 0-1h-1a.5.5 0 1 0 0 1zM8.5 14v-1.5a.5.5 0 1 0-1 0V14a.5.5 0 1 0 1 0z"/>
   </symbol>
   <symbol id="network" viewBox="0 0 16 16">
     <rect fill-opacity=".5" x="2" y="3" width="8" height="1" rx=".5"/>

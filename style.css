@@ -13,6 +13,23 @@ body {
   margin: 0 auto;
   padding: 20px;
   font-family: system-ui, -apple-system, sans-serif;
+  font-size: 100%;
+  line-height: 1.375;
+  color: var(--theme-body-color);
+  background-color: var(--theme-body-background);
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  margin-top: 2em;
+  font-size: 1.15em;
+}
+
+a {
+  color: inherit;
 }
 
 /**
@@ -36,18 +53,44 @@ svg {
   border: none;
 }
 
+body > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  gap: 30px;
+}
+body > header > * {
+  margin: 0;
+}
+
 .warning-box {
-  border: solid 1px #d7b600;
-  padding: 20px;
-  background-color: #fff8b0;
+  opacity: 0.8;
+  border: solid 1px hsla(55, 100%, 40%, 0.4);
+  padding: .8em 1em;
+  line-height: 1.5;
+  background-color: hsla(55, 100%, 50%, 0.1);
+}
+
+.theme-switcher {
+  padding: .3em .6em;
+  border: solid 1px;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: hsla(0, 0%, 50%, 0.2);
+}
+.theme-switcher:hover,
+.theme-switcher:focus {
+  color: var(--theme-focus-border-color);
+  background: none;
 }
 
 .example-box {
-  margin: 20px 0;
+  margin: 50px 0;
+  outline: solid 1px var(--theme-splitter-color);
   box-shadow: 0 1px 4px rgba(0,0,0,.15);
   font-size: 11px;
   line-height: 1.2727;
-  border: solid 1px var(--theme-splitter-color);
 }
 
 .horizontal-splitter {
@@ -97,35 +140,87 @@ svg {
   border-radius: 2px;
 }
 
-.toolbar-button svg {
+.toolbar-fullbutton {
+  align-self: stretch;
+  outline: none;
+  margin: 0;
+  padding: 6px 4px;
+  border: 1px solid transparent;
+}
+
+.devtools-tabs {
+  display: flex;
+  align-self: stretch;
+  align-items: stretch;
+}
+
+.devtools-tab {
+  position: relative;
+  outline: none;
+  display: flex;
+  align-items: center;
+  min-height: 24px;
+  margin: 0;
+  padding: 4px 10px;
+  border: 1px solid transparent;
+}
+
+.devtools-tab svg {
+  display: block;
+  margin-left: -2px;
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+}
+
+.devtools-tab::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 2px;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform 250ms var(--animation-curve), opacity 250ms var(--animation-curve);
+}
+
+.devtools-tab:hover::before {
+  opacity: 1;
+  transform: none;
+  background-color: var(--tab-line-hover-color);
+}
+
+.devtools-tab.active::before {
+  opacity: 1;
+  transform: none;
+  background-color: var(--tab-line-selected-color);
+}
+
+.toolbar-button:hover,
+.toolbar-fullbutton:hover,
+.devtools-tab:hover {
+  background-color: var(--theme-toolbar-hover);
+}
+
+.toolbar-button.focus-visible {
+  border-color: var(--theme-focus-border-color);
+  box-shadow: var(--theme-focus-shadow);
+}
+
+.toolbar-fullbutton.focus-visible,
+.devtools-tab.focus-visible {
+  border-color: var(--theme-focus-border-color);
+  box-shadow: var(--theme-focus-inset-shadow);
+}
+
+.toolbar-button svg,
+.toolbar-fullbutton svg {
   vertical-align: top;
   margin: -1px 0;
   width: 16px;
   height: 16px;
 }
-
-.toolbar-button:hover {
-  background-color: var(--theme-toolbar-hover);
-}
-
-.toolbar-button.focus-visible {
-  border-color: var(--theme-focus-outline-primary-color);
-  box-shadow: 0 0 0 2px var(--theme-focus-outline-secondary-color);
-}
-
-.toolbar-button--altfocus:-moz-focusring {
-  box-shadow: inset 0 0 0 2px var(--theme-focus-outline-secondary-color);
-}
-
-.toolbox .toolbar-button.focus-visible {
-  border-color: transparent;
-  box-shadow: 0 0 0 2px inset var(--theme-focus-outline-secondary-color);
-}
-
-.toolbox  .toolbar-button--altfocus:-moz-focusring {
-  box-shadow: 0 0 0 2px inset var(--theme-focus-outline-secondary-color);
-}
-
 
 .toolbar-input {
   align-self: center;
@@ -137,7 +232,7 @@ svg {
   background-color: var(--input-background);
 }
 
-.toolbar-input-full {
+.toolbar-fullinput {
   align-self: stretch;
   margin: 0 1px;
   border: solid 1px transparent;
@@ -148,13 +243,13 @@ svg {
 }
 
 .toolbar-input:focus {
-  border-color: var(--theme-focus-outline-primary-color);
-  box-shadow: 0 0 0 2px var(--theme-focus-outline-secondary-color);
+  border-color: var(--theme-focus-border-color);
+  box-shadow: var(--theme-focus-shadow);
 }
 
-.toolbar-input-full:focus {
-  border-color: var(--theme-focus-outline-primary-color);
-  box-shadow: inset 0 0 0 2px var(--theme-focus-outline-secondary-color);
+.toolbar-fullinput:focus {
+  border-color: var(--theme-focus-border-color);
+  box-shadow: var(--theme-focus-inset-shadow);
 }
 
 .toolbox {
@@ -162,7 +257,7 @@ svg {
   border:0;
 }
 
-.toolbox .toolbar-group{
+.toolbox .toolbar-group {
   padding: 0;
 }
 
